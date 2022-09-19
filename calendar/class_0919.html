@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="img" src="jjang1.jpg" alt = "My Image" width = "400">
+
+    <form>
+        <input type = "button" name = "ok" onclick = "MovePrev()" value="이전" />
+        <input type = "button" name = "ok" onclick = "MoveNext()" value="다음" />
+    </form>
+    <script>
+        var img_num = 1;
+        function MovePrev(){
+            img_num--;
+            if(img_num <= 0)
+                img_num++;
+            document.getElementById("img").src = "jjang"+img_num.toString()+".jpg";
+        }
+        function MoveNext(){
+            img_num++;
+            if(img_num >= 6)
+                img_num--;
+                document.getElementById("img").src = "jjang"+img_num.toString()+".jpg";
+        }
+    </script>
+</body>
+</html>
