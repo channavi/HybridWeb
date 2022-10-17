@@ -12,11 +12,30 @@
     </style>
 </head>
 <body>
+    <link rel="stylesheet" type="text/css" href="menu.css">
+    <script type="text/javascript" src="drop.js"></script>
     <style>
     td:nth-child(1), th:nth-child(1) {color:red;}
     td:nth-last-child(1), th:nth-last-child(1) {color:blue;}
     </style>
-    <h1>2022년 10월</h1>
+    <h1>
+        달력
+    </h1>
+    <div class="dropdown">
+        <button onclick = "myFunction()" class = "dropbtn">2022년</button>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="#">2023년</a>
+            <a href="#">2024년</a>
+            <a href="#">2025년</a>
+          </div>
+    </div>
+    <div class="dropdown2">
+        <button onclick = "myFunction()" class = "dropbtn2">10월</button>
+        <div id="myDropdown2" class="dropdown-content2">
+            <a href="#">11월</a>
+            <a href="#">12월</a>
+          </div>
+    </div>
     <table>
         <thead>
             <tr>
