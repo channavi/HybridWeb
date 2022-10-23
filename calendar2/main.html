@@ -4,117 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2022년 10월</title>
-    <style>
-        table {border-collapse: collapse;}
-        td { border: 1px solid gray; padding: 3px; width: 120px; height: 120px; vertical-align: top;}
-        thead {background-color: #dddddd; border: 1px solid gray; font-weight: bold; height : 30px}
-    </style>
-</head>
-<body>
+    <title>달력 만들기</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" type="text/css" href="menu.css">
     <script type="text/javascript" src="drop.js"></script>
-    <style>
-    td:nth-child(1), th:nth-child(1) {color:red;}
-    td:nth-last-child(1), th:nth-last-child(1) {color:blue;}
-    </style>
-    <h1>
-        달력
-    </h1>
-    <div class="dropdown">
-        <button onclick = "myFunction()" class = "dropbtn">2022년</button>
-        <div id="myDropdown" class="dropdown-content">
-            <a href="#">2023년</a>
-            <a href="#">2024년</a>
-            <a href="#">2025년</a>
-          </div>
+</head>
+<body>
+    <div class = "calendar">
+        <div class = "header">
+            <div class = "year-month"></div>
+            <div class = "nav">
+                <button class  = "nav-btn go-prev" onclick="prevMonth()">&lt;</button>
+                <button class = "nav-btn go-today" onclick="goToday()">Today</button>
+                <button class = "nav-btn go-next" onclick="nextMonth()">&gt;</button>
+            </div>
+        </div>
+
+        <div class = "main">
+            <div class = "days">
+                <div class = "day">일</div>
+                <div class = "day">월</div>
+                <div class = "day">화</div>
+                <div class = "day">수</div>
+                <div class = "day">목</div>
+                <div class = "day">금</div>
+                <div class = "day">토</div>
+            </div>
+            <div class = "dates"> </div>
+        </div>
     </div>
-    <div class="dropdown2">
-        <button onclick = "myFunction()" class = "dropbtn2">10월</button>
-        <div id="myDropdown2" class="dropdown-content2">
-            <a href="#">11월</a>
-            <a href="#">12월</a>
-          </div>
-    </div>
-    <table>
-        <thead>
-            <tr>
-                <th>일</th>
-                <th>월</th>
-                <th>화</th>
-                <th>수</th>
-                <th>목</th>
-                <th>금</th>
-                <th>토</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>1</td>
-            </tr>
-        </tbody>
-        <tbody>
-            <tr>
-                <td>2</td>
-                <td style="color : red">3 개천절</td>
-                <td>4</td>
-                <td>5</td>
-                <td>6</td>
-                <td>7</td>
-                <td>8</td>
-            </tr>
-        </tbody>
-        <tbody>
-            <tr>
-                <td>9 한글날</td>
-                <td style="color : red">10 대체공휴일</td>
-                <td>11</td>
-                <td>12</td>
-                <td>13</td>
-                <td>14</td>
-                <td>15</td>
-            </tr>
-        </tbody>
-        <tbody>
-            <tr>
-                <td>16</td>
-                <td>17</td>
-                <td>18</td>
-                <td>19</td>
-                <td>20</td>
-                <td>21</td>
-                <td>22</td>
-            </tr>
-        </tbody>
-        <tbody>
-            <tr>
-                <td>23</td>
-                <td>24</td>
-                <td>25</td>
-                <td>26</td>
-                <td>27</td>
-                <td>28</td>
-                <td>29</td>
-            </tr>
-        </tbody>
-        <tbody>
-            <tr>
-                <td>30</td>
-                <td>31</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
-    
+    <script src="index.js"></script>
 </body>
 </html>
