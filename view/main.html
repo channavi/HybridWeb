@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>component 실습</title>
+</head>
+<body>
+    <script src = "https://unpkg.com/vue@3"></script>
+    <!-- vue 프레임웍을 사용한 예시-->
+    <div id = "app">{{message}}</div>
+
+    <script type = "module">
+        var a = ()=>{
+        //람다식 함수
+        }
+
+        function a()
+        {
+
+        }
+        import {createApp} from Vue;
+        createApp({
+            data(){
+                return{
+                    message : "hello"
+                }
+            }
+        }).mount("#app")
+    </script>
+</body>
+</html>
