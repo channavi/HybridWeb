@@ -9,24 +9,28 @@
 <body>
     <script src = "https://unpkg.com/vue@3"></script>
     <!-- vue 프레임웍을 사용한 예시-->
-    <div id = "app">{{message}}</div>
+    <div id = "app">
+        카운트 : {{ count }}
+        <button @click="count++;">플러스</button>
+        <br>
+        <p>김준석 <b v-html="count"></b>ㅎㅎ</p>
+    </div>
 
-    <script type = "module">
-        var a = ()=>{
-        //람다식 함수
-        }
-
-        function a()
-        {
-
-        }
-        import {createApp} from Vue;
+    <script>
+        const {createApp} = Vue;
+       
         createApp({
-            data(){
+            data()
+            {
                 return{
-                    message : "hello"
+                    count : 0,
                 }
-            }
+            },
+        mounted()
+        {
+            console.log("마운트 성공");
+        },
+
         }).mount("#app")
     </script>
 </body>
