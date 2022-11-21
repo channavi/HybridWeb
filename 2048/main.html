@@ -1,0 +1,32 @@
+<!-- https://v3-docs.vuejs-korea.org/  -->
+<html lang="en">
+<head>
+    <title>2048 실습</title>
+</head>
+<body>
+    <script src="https://unpkg.com/vue@3"></script>
+    <link rel="stylesheet" href="2048.css">
+    <script type="text/javascript" src="2048.js"></script>
+
+    <div id="app">
+        <div class="backblock" v-for="index in backblocks"></div>       
+        <div id = "block" class="frontblock">1</div>
+    </div>
+
+
+
+    <script>
+        const {createApp} = Vue;
+        createApp({
+            data() {
+                return {                    
+                    backblocks : 16,
+                }
+            },
+            mounted(){
+                console.log("app 마운트 성공!");
+            },
+        }).mount("#app");
+    </script>    
+</body>
+</html>

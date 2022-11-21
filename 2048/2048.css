@@ -1,0 +1,28 @@
+#app{
+    position: relative;
+    width: 610px;
+    height: 610px;
+    background-color: beige;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    padding : 10px;           
+}
+.backblock{            
+    background-color: burlywood;
+}
+
+.frontblock{
+    position:absolute;
+    top:20px;
+    left:20px;
+    width: 125px;
+    height: 125px;
+    background-color: goldenrod;
+    text-align: center;
+    line-height: 1.6;
+    font-size: 70;
+    font-family: cursive;
+    display: grid;
+}
