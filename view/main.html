@@ -13,7 +13,7 @@
         카운트 : {{ count }}
         <button @click="count++;">플러스</button>
         <br>
-        <p>김준석 <b v-html="count"></b>ㅎㅎ</p>
+        <p>김준석 <b v-html="style"></b>ㅎㅎ</p>
     </div>
 
     <script>
@@ -24,6 +24,7 @@
             {
                 return{
                     count : 0,
+                    style : ""
                 }
             },
         mounted()
