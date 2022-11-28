@@ -13,9 +13,9 @@
     background-color: burlywood;
 }
 
-.frontblock{
+td{    
     position:absolute;
-    top:20px;
+    top:485px;
     left:20px;
     width: 125px;
     height: 125px;
