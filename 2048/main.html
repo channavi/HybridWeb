@@ -6,47 +6,45 @@
 <body>
     <script src="https://unpkg.com/vue@3"></script>
     <link rel="stylesheet" href="2048.css">
-    <script type="text/javascript" src="2048.js"></script>
-
-    <div id="app">
-        <div class="backblock" v-for="index in backblocks"></div>       
+    
+    <table id="titleBar" border=0>
         <tr>
-            <td id = "00"></td>
-            <td id = "01"></td>
-            <td id = "02"></td>
-            <td id = "03"></td>
-
-            <td id = "10"></td>
-            <td id = "11"></td>
-            <td id = "12"></td>
-            <td id = "13"></td>
-
-            <td id = "20"></td>
-            <td id = "21"></td>
-            <td id = "22"></td>
-            <td id = "23"></td>
-
-            <td id = "30"></td>
-            <td id = "31"></td>
-            <td id = "32"></td>
-            <td id = "33"></td>
+            <td id="titlePad">
+                <p id="title">2048</p>
+            </td>
+            <td id="scorePad">
+                <p id="scoreType">Score</p>
+                <p id="score"></p>
         </tr>
-    </div>
-
-
-
-    <script>
-        const {createApp} = Vue;
-        createApp({
-            data() {
-                return {                    
-                    backblocks : 16,
-                }
-            },
-            mounted(){
-                console.log("app 마운트 성공!");
-            },
-        }).mount("#app");
-    </script>    
+    </table>
+        
+<table id="board" border=0>
+    <tr>
+        <td id="00"></td>
+        <td id="01"></td>
+        <td id="02"></td>
+        <td id="03"></td>
+    </tr>
+    <tr>
+        <td id="10"></td>
+        <td id="11"></td>
+        <td id="12"></td>
+        <td id="13"></td>
+    </tr>
+    <tr>
+        <td id="20"></td>
+        <td id="21"></td>
+        <td id="22"></td>
+        <td id="23"></td>
+    </tr>
+    <tr>
+        <td id="30"></td>
+        <td id="31"></td>
+        <td id="32"></td>
+        <td id="33"></td>
+    </tr>
+</table>
+    
 </body>
+<script type="text/javascript" src="2048.js"></script>
 </html>
