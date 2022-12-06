@@ -1,6 +1,7 @@
 var board = Array(Array(0,0,0,0),Array(0,0,0,0),Array(0,0,0,0),Array(0,0,0,0));
 var tableID = Array(Array("00","01","02","03"),Array("10","11","12","13"),Array("20","21","22","23"),Array("30","31","32","33"));
 var score;
+var gm = true;
 document.getElementById("btn").addEventListener('click',gamestart);
 // 키보드 입력 처리
 document.onkeydown = keyDownEventHandler;
@@ -60,6 +61,7 @@ function update(){
     }
     document.getElementById("score").innerHTML=score;
     checkGameClear();
+    checkGameOver();
 }
 
 // 칸 색칠
@@ -153,40 +155,43 @@ function rotate(n){
 function move(){
     var isMoved=false;
     var isPlused = Array(Array(0,0,0,0),Array(0,0,0,0),Array(0,0,0,0),Array(0,0,0,0));
-    for(var i=1;i<4;i++){
-        for(var j=0;j<4;j++){
-            if(board[i][j]==0) continue;
-            var tempY = i-1;
-            while(tempY>0 && board[tempY][j]==0) tempY--;
-            if(board[tempY][j]==0){
-                board[tempY][j]=board[i][j];
-                board[i][j]=0;
-                isMoved=true;
-            }
-            else if(board[tempY][j]!=board[i][j]){
-                if(tempY+1==i) continue;
-                board[tempY+1][j]=board[i][j];
-                board[i][j]=0;
-                isMoved=true;
-            }
-            else{
-                if(isPlused[tempY][j]==0){
-                    board[tempY][j]*=2;
-                    score+=board[tempY][j];
+    if(gm == true)
+    {
+        for(var i=1;i<4;i++){
+            for(var j=0;j<4;j++){
+                if(board[i][j]==0) continue;
+                var tempY = i-1;
+                while(tempY>0 && board[tempY][j]==0) tempY--;
+                if(board[tempY][j]==0){
+                   board[tempY][j]=board[i][j];
                     board[i][j]=0;
-                    isPlused[tempY][j]=1;
                     isMoved=true;
                 }
-                else{
+                else if(board[tempY][j]!=board[i][j]){
+                    if(tempY+1==i) continue;
                     board[tempY+1][j]=board[i][j];
                     board[i][j]=0;
                     isMoved=true;
                 }
+                else{
+                    if(isPlused[tempY][j]==0){
+                        board[tempY][j]*=2;
+                        score+=board[tempY][j];
+                        board[i][j]=0;
+                        isPlused[tempY][j]=1;
+                        isMoved=true;
+                    }
+                    else{
+                        board[tempY+1][j]=board[i][j];
+                        board[i][j]=0;
+                        isMoved=true;
+                    }
+                }
             }
         }
-    }
     if(isMoved) generate();
     else checkGameOver();
+    }
 }
 
 // 신규 숫자 생성
@@ -270,11 +275,11 @@ function checkGameClear()
 
 // 게임오버 처리
 function gameover(){
-    alert("[Game Over]\nMax: "+getMaxNum()+"\nScore"+score);
-    init();
+    document.getElementById("score").innerHTML="GameOver";
+    gm = false;
 }
 
 function gameclear(){
-    alert("[Game Clear]\nScore"+score+"축하합니다!!");
-    init();
+    document.getElementById("score").innerHTML="Clear!";
+    gm = false;
 }

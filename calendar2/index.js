@@ -33,7 +33,7 @@ const renderCalendar = () => {
   for (let i = 1; i < 7 - TLDay; i++) {
     nextDates.push(i)
   }
-
+ 
   // Dates 합치기
   const dates = prevDates.concat(thisDates, nextDates);
 
@@ -81,4 +81,11 @@ const prevMonth = () => {
     renderCalendar();
   }
 
-  
+  if(month == 10 && date == 8)
+  {
+     holiday = true;
+  }
+  else
+  {
+    holiday = false;
+  }
