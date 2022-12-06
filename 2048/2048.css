@@ -61,3 +61,22 @@ body{
     font-size: 10pt;
     color: white;
 }
+#gameStart{
+    width: 400px;
+    height: 400px;
+    background-color: #372C25;
+    margin: 0px;
+}
+#popUp{
+    margin-left: 70px;
+}
+#gameStart{
+    border-radius: 9px;
+    text-align: center;
+    vertical-align: center;
+    font-size: 18pt;
+    font-weight: bold;
+    height: 70px;
+    width: 300px;
+    background-color: #715541;
+}
